@@ -145,6 +145,8 @@
             },
         }
 
+        const initialLocation = localStorage.getItem('path') || window.location.pathname
+
         let initialized = false
         /** @param {HTMLTemplateElement} template */
         const initializePage = (template) => {
@@ -172,7 +174,8 @@
                     pageHandlers[pageId]()
                 }
             }
-            if (window.location.pathname === historyEntry) {
+
+            if (initialLocation === historyEntry) {
                 initialized = true
                 updatePage()
             }
