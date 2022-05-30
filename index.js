@@ -152,7 +152,8 @@
         /** @param {HTMLTemplateElement} template */
         const initializePage = (template) => {
             const pageId = template.dataset.page
-            const historyEntry = `${BASE}/${template.dataset.url ?? pageId}`
+            const link = `/${template.dataset.url ?? pageId}`
+            const historyEntry = `${BASE}${link}`
             const documentTitle = template.dataset.title
 
             if (!documentTitle) {
@@ -188,10 +189,7 @@
 
                 /** @type {any} */
                 let node = event.target
-                while (
-                    node &&
-                    (!(node instanceof HTMLAnchorElement) || !`${BASE}${node.href}`.endsWith(historyEntry))
-                ) {
+                while (node && (!(node instanceof HTMLAnchorElement) || !String(node.href).endsWith(link))) {
                     node = node.parentNode
                 }
 
