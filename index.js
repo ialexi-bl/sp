@@ -1,5 +1,6 @@
 // @ts-check
 {
+    const BASE = '/sp'
     const DAY = 24 * 60 * 60 * 1000
 
     /** @param {ConstructorParameters<DateConstructor>[0]} date */
@@ -203,7 +204,7 @@
         templates.forEach(initializePage)
 
         if (!initialized) {
-            window.location.href = '/home'
+            window.location.href = `${BASE}/home`
         }
     }
 
