@@ -152,7 +152,7 @@
         /** @param {HTMLTemplateElement} template */
         const initializePage = (template) => {
             const pageId = template.dataset.page
-            const historyEntry = `/${template.dataset.url ?? pageId}`
+            const historyEntry = `${BASE}/${template.dataset.url ?? pageId}`
             const documentTitle = template.dataset.title
 
             if (!documentTitle) {
