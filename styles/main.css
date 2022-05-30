@@ -46,7 +46,7 @@
 }
 
 .page-home .program-description + span {
-    text-decoration: dashed underline;
+    text-decoration: dotted underline;
     transition: opacity 0.2s;
     cursor: help;
 }
