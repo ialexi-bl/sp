@@ -188,13 +188,14 @@
 
                 /** @type {any} */
                 let node = event.target
-                while (node && node?.attributes?.href !== historyEntry) {
+                while (node?.attributes?.href && `${BASE}${node.attributes.href}` !== historyEntry) {
                     node = node.parentNode
                 }
 
                 if (node) {
                     event.preventDefault()
                     updatePage()
+                    history.pushState('', '', historyEntry)
                 }
             })
         }
