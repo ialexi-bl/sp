@@ -188,7 +188,7 @@
 
                 /** @type {any} */
                 let node = event.target
-                while (node?.attributes?.href && `${BASE}${node.attributes.href}` !== historyEntry) {
+                while (node && node instanceof HTMLAnchorElement && `${BASE}${node.href}`.endsWith(historyEntry)) {
                     node = node.parentNode
                 }
 
