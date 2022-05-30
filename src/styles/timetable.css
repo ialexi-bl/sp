@@ -1,0 +1,78 @@
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes centered-spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(1turn);
+    }
+}
+
+.loading-error {
+    display: none;
+    height: 480px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.loading-spinner {
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-spinner .spinner {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 4px solid black;
+    border-right-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+.error ~ .loading-error {
+    display: flex;
+}
+
+.loaded ~ .loading-spinner,
+.error ~ .loading-spinner {
+    display: none;
+}
+
+.loading-error .button {
+    position: relative;
+}
+.loading-error .button::after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: opacity 0.1s;
+    width: 12px;
+    height: 12px;
+    border: 2px solid black;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: centered-spin 0.5s infinite linear;
+    pointer-events: none;
+}
+
+.error:not(.loaded) ~ .loading-error .button {
+    color: transparent;
+}
+
+.error:not(.loaded) ~ .loading-error .button::after {
+    opacity: 1;
+}

@@ -1,0 +1,87 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ul {
+    list-style: '– ';
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+.text-48 {
+    font-size: 48px;
+}
+
+.text-32 {
+    font-size: 32px;
+}
+
+.text-24 {
+    font-size: 24px;
+}
+
+.text-20 {
+    font-size: 20px;
+}
+
+.mb-4 {
+    margin-bottom: 4px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.button {
+    padding: 12px 16px;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+    background: white;
+    font-size: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: 0.1s;
+}
+
+.button:active {
+    transform: scale(0.97);
+}

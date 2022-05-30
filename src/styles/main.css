@@ -1,0 +1,61 @@
+.page-home .avatar {
+    border-radius: 16px;
+    float: left;
+    margin-right: 24px;
+}
+
+.page-home .top-title {
+    font-weight: normal;
+    margin-bottom: 24px;
+}
+
+.page-home .programs-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.page-home .programs-list li {
+    position: relative;
+}
+
+.page-home .program-description {
+    opacity: 0;
+    pointer-events: none;
+    background: white;
+    border-radius: 16px;
+    width: 480px;
+    max-width: 90vw;
+    padding: 24px;
+    position: absolute;
+    top: 110%;
+    left: -16px;
+    z-index: 1;
+    box-shadow: 2px 2px 32px rgba(0, 0, 0, 0.16);
+    transition: opacity 0.2s;
+}
+
+.page-home .program-description::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    height: 1em;
+    left: 0;
+    right: 0;
+    cursor: help;
+}
+
+.page-home .program-description + span {
+    text-decoration: dashed underline;
+    transition: opacity 0.2s;
+    cursor: help;
+}
+
+.page-home .program-description + span:hover {
+    opacity: 0.7;
+}
+
+.page-home li:hover .program-description {
+    pointer-events: all;
+    opacity: 1;
+}
